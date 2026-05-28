@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ffain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .loading-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 100;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: #fff;
+      letter-spacing: 0.15em;
+      opacity: 0;
+      animation: fadeIn 3s ease 0.5s forwards;
+    }
+
+    .sub {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.5rem, 1.5vw, 0.65rem);
+      color: #fff;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 3s ease 2s forwards;
+    }
+
+    .bar-wrap {
+      width: 120px;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin-top: 8px;
+      opacity: 0;
+      animation: fadeIn 1s ease 3.5s forwards;
+    }
+
+    .bar {
+      height: 1px;
+      background: #fff;
+      animation: progress 6s ease-in-out 4s infinite;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes progress {
+      0%   { width: 0%; margin-left: 0%; }
+      50%  { width: 100%; margin-left: 0%; }
+      51%  { width: 0%; margin-left: 100%; }
+      100% { width: 0%; margin-left: 0%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="loading-text">ffain</div>
+    <div class="sub">arquitetura e interiores</div>
+    <div class="bar-wrap">
+      <div class="bar"></div>
+    </div>
+  </div>
+</body>
+</html>
